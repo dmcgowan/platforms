@@ -186,6 +186,44 @@ func TestOnly(t *testing.T) {
 			},
 		},
 		{
+			platform: "linux/arm64/v9.6",
+			matches: map[bool][]string{
+				true: {
+					"linux/arm",
+					"linux/arm/v5",
+					"linux/arm/v6",
+					"linux/arm/v7",
+					"linux/arm/v8",
+					"linux/arm64",
+					"linux/arm64/v8",
+					"linux/arm64/v8.1",
+					"linux/arm64/v8.2",
+					"linux/arm64/v8.3",
+					"linux/arm64/v8.4",
+					"linux/arm64/v8.5",
+					"linux/arm64/v8.6",
+					"linux/arm64/v8.7",
+					"linux/arm64/v8.8",
+					"linux/arm64/v8.9",
+					"linux/arm64/v9",
+					"linux/arm64/v9.0",
+					"linux/arm64/v9.1",
+					"linux/arm64/v9.2",
+					"linux/arm64/v9.3",
+					"linux/arm64/v9.4",
+					"linux/arm64/v9.5",
+					"linux/arm64/v9.6",
+				},
+				false: {
+					"linux/amd64",
+					"linux/arm/v4",
+					"windows/amd64",
+					"windows/arm",
+					"linux/arm64/v8.10", // there's no v8.10
+				},
+			},
+		},
+		{
 			platform: "linux/arm64/v9",
 			matches: map[bool][]string{
 				true: {

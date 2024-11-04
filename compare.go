@@ -97,8 +97,11 @@ func platformVector(platform specs.Platform) []specs.Platform {
 					})
 				}
 
-				// v9.0 diverged from v8.5, meaning that v9.x is compatible with v8.{x+5}
+				// v9.0 diverged from v8.5, meaning that v9.x is compatible with v8.{x+5} until v9.4/v8.9
 				armMinor = armMinor + 5
+				if armMinor > 9 {
+					armMinor = 9
+				}
 				armMajor = 8
 				vector = append(vector, specs.Platform{
 					Architecture: platform.Architecture,
